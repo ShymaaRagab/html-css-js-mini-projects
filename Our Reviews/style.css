@@ -1,0 +1,139 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+main {
+  height: 100vh;
+  background-color: hsl(210, 36%, 96%);
+  display: grid;
+  place-items: center;
+  font-family: sans-serif, Verdana, Geneva, Tahoma;
+  letter-spacing: 2px;
+}
+
+h1 {
+  display: grid;
+  place-items: center;
+  font-size: 2.5rem;
+  color: hsl(210, 42%, 17%);
+  text-transform: capitalize;
+  margin: 0px 0px 80px 0px;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  left: 43.2%;
+  bottom: -14px;
+  width: 85px;
+  height: 5px;
+  background-color: hsl(199, 63%, 51%);
+  position: absolute;
+}
+.img {
+  position: relative;
+}
+.img::before {
+  content: "";
+  width: 150px;
+  height: 145px;
+  border-radius: 50%;
+  background-color: hsl(199, 100%, 59%);
+  position: absolute;
+  right: -10px;
+  top: -5px;
+}
+img {
+  width: 150px;
+  height: 145px;
+  border-radius: 50%;
+  filter: brightness(100%) contrast(120%);
+}
+
+.img::after {
+  content: ",,";
+  letter-spacing: -1.5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: hsl(199, 100%, 59%);
+  position: absolute;
+  left: 1px;
+  top: 4px;
+  color: #fff;
+  text-align: center;
+  font: 800 35px/17px sans-serif;
+}
+
+.box {
+  width: 600px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+  box-shadow: 2px 2px 13px 0px hsl(210deg 10.3% 81.85%);
+}
+.name {
+  letter-spacing: 3.5px;
+  margin-bottom: 0;
+}
+.job {
+  letter-spacing: 0px;
+  color: hsl(199, 81%, 54%);
+  font-size: 13px;
+  margin-top: -6px;
+}
+p {
+  color: hsl(210, 22%, 49%);
+  font-size: 13px;
+  text-align: center;
+  margin-top: -3px;
+}
+#right,
+#left {
+  width: 10px;
+  height: 10px;
+  border: hsl(199, 89%, 71%) solid;
+  cursor: pointer;
+  transform: rotate(-45deg);
+  display: block;
+  margin: 0px 10px;
+}
+#left {
+  border-width: 4px 0px 0px 4px;
+}
+
+#right {
+  border-width: 0px 4px 4px 0px;
+}
+
+#right:hover,
+#left:hover {
+  border-color: hsl(199, 81%, 54%);
+}
+
+.btn {
+  display: flex;
+}
+
+button {
+  background-color: hsl(205, 100%, 96%);
+  color: hsl(205, 78%, 60%);
+  width: 100px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 8px;
+  border-color: rgb(73, 166, 233) rgb(19, 92, 144) rgb(19, 92, 144)
+    rgb(73, 166, 233);
+  border-width: 3px;
+  border-style: solid;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(73, 166, 233);
+  color: hsl(209, 82%, 9%);
+  transition-duration: 0.5s;
+}

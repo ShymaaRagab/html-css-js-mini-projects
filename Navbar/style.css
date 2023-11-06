@@ -1,0 +1,136 @@
+/* width < 800px start respones */
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f1f5f8;
+  font-family: sans-serif;
+}
+nav {
+  min-height: 70px;
+  background-color: #fff;
+  box-shadow: 0px 2px 14px 0px #b8bec3;
+}
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  letter-spacing: 3px;
+}
+.header {
+  display: flex;
+  gap: 10px;
+}
+.header h1 {
+  font-weight: 200;
+  font-size: 25px;
+  text-shadow: 0px 3px 3px #b2b9bf;
+}
+.header h1:last-child {
+  color: #49a6e9;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+}
+.links a {
+  color: #324d67;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 5px;
+}
+.links a:hover {
+  color: #49a6e9;
+}
+i {
+  color: #49a6e9;
+  font-size: 17px;
+}
+i:hover {
+  color: #7ec4f6;
+}
+
+/* ---------------------------------------------------------------- */
+@media only screen and (max-width: 800px) {
+  .content {
+    display: grid;
+    justify-content: space-between;
+    grid-template-areas:
+      "logo logo logo logo logo shape"
+      "links links links links links links";
+  }
+  .header,
+  .socialLinks {
+    margin: 0px 25px;
+  }
+  .header {
+    grid-area: logo;
+  }
+  .links {
+    grid-area: links;
+  }
+  .socialLinks {
+    grid-area: shape;
+  }
+  .socialLinks ul {
+    display: none;
+  }
+  .socialLinks,
+  .socialLinks::after,
+  .socialLinks::before {
+    width: 25px;
+    height: 4px;
+    background-color: #49a6e9;
+    border-radius: 3px;
+  }
+  .socialLinks::after,
+  .socialLinks::before {
+    content: "";
+    display: block;
+  }
+  .socialLinks::after {
+    margin-top: -18.5px;
+  }
+  .socialLinks::before {
+    margin-top: 7px;
+  }
+  @keyframes mymove {
+    to {
+      rotate: 90deg;
+    }
+  }
+  .socialLinks:hover,
+  .socialLinks:focus {
+    animation: mymove forwards 1s 1;
+  }
+  .socialLinks:hover,
+  .socialLinks:hover::after,
+  .socialLinks:hover::before {
+    background-color: #324d67;
+    cursor: pointer;
+  }
+  .links ul {
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+  .links a {
+    display: block;
+    padding: 10px 25px;
+  }
+  .links a:hover {
+    background-color: #97cef4;
+    cursor: pointer;
+    color: #109cff;
+    animation: moveLink forwards 0.5s 1 running;
+  }
+  @keyframes moveLink {
+    to {
+      padding: 10px 40px;
+    }
+  }
+  .clicked ul {
+    display: block;
+  }
+}

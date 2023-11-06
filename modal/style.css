@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.content {
+  background: url("hero.jpeg") center/cover no-repeat;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(67, 123, 164, 0.5);
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease;
+  visibility: hidden;
+  z-index: -10;
+}
+.modal {
+  background-color: #fff;
+  width: 620px;
+  height: 200px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+}
+.card-modal {
+  background-color: #fff;
+  color: #1f2f3e;
+  width: 620px;
+  height: 270px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+h1 {
+  font-size: 70px;
+  margin-top: 35px;
+  padding: 0;
+}
+button {
+  background-color: #49a6e9;
+  color: #fff;
+  width: 163px;
+  height: 33px;
+  border: transparent;
+  border-radius: 7px;
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+button:hover {
+  background-color: #fff;
+  color: #49a6e9;
+  border: #49a6e9 solid 2px;
+  box-shadow: #e6e6ff 0px 2px 3px 0.5px;
+  cursor: pointer;
+}
+
+.show-Modal {
+  visibility: visible;
+  z-index: 10;
+}
+span,
+span::before {
+  width: 27px;
+  height: 6px;
+  background-color: #f20a0a;
+  border-radius: 2px;
+}
+span {
+  rotate: 45deg;
+  position: relative;
+  cursor: pointer;
+  right: -280px;
+  top: -165px;
+  transition: all 0.7s ease;
+}
+span:hover {
+  opacity: 0.6;
+  transform: scale(1.5);
+}
+span::before {
+  content: "";
+  position: absolute;
+  rotate: 90deg;
+}
+h2 {
+  font: 600 27px/200px sans-serif;
+  letter-spacing: 3px;
+}

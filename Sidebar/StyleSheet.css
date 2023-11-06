@@ -1,0 +1,174 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f1f5f8;
+  font-family: sans-serif;
+}
+.containButton {
+  position: fixed;
+  right: 25px;
+  top: 15px;
+  width: 85px;
+  height: 58px;
+  background-color: transparent;
+}
+.containButton:hover {
+  cursor: pointer;
+}
+.showSidebar,
+.showSidebar::after,
+.showSidebar::before {
+  width: 50px;
+  height: 8px;
+  background-color: #49a6e9;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  border-radius: 2px;
+}
+.showSidebar {
+  position: fixed;
+  right: 40px;
+  top: 40px;
+  border-color: #49a6e9;
+  border-style: none;
+  animation: aniForButton 2s ease-in-out infinite;
+}
+.showSidebar::after,
+.showSidebar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.showSidebar::after {
+  bottom: 15px;
+}
+.showSidebar::before {
+  top: 15px;
+}
+@keyframes aniForButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.showSidebar:hover,
+.showSidebar:hover::after,
+.showSidebar:hover::before {
+  background-color: #9acbff;
+  cursor: pointer;
+}
+
+.Sidebar {
+  background-color: #fff;
+  width: 400px;
+  height: 100vh;
+  display: none;
+  grid-template-rows: auto 75% auto;
+  grid-template-areas:
+    "logo logo logo logo logo shape"
+    "links links links links links links"
+    "social social social social social social";
+}
+.xbutton,
+.xbutton::before {
+  width: 25px;
+  height: 5px;
+  background-color: #bb2525;
+  border-radius: 2px;
+}
+.xbutton {
+  grid-area: shape;
+  rotate: 45deg;
+  margin-top: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.xbutton::before {
+  content: "";
+  position: absolute;
+  background-color: #bb2525;
+  rotate: 90deg;
+}
+.xbutton:hover {
+  opacity: 0.7;
+  transform: rotate(450deg);
+}
+
+.header {
+  grid-area: logo;
+  display: flex;
+  gap: 10px;
+  margin-left: 25px;
+}
+.header h1 {
+  font-size: 25px;
+  text-shadow: 0px 4px 3.5px #b2b9bf;
+  letter-spacing: 3px;
+}
+.header h1:last-child {
+  color: #49a6e9;
+}
+ul {
+  list-style-type: none;
+}
+.links {
+  grid-area: links;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.links a {
+  display: block;
+  padding: 20px 25px;
+  color: #41607c;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  transition: all 0.3s linear;
+}
+.links a:hover {
+  background-color: #97cef4;
+  cursor: pointer;
+  color: #109cff;
+  animation: moveLink forwards 0.5s 1 running;
+}
+@keyframes moveLink {
+  to {
+    padding: 20px 32px;
+  }
+}
+.socialLinks {
+  grid-area: social;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 0;
+  margin-top: 0;
+}
+i {
+  color: #49a6e9;
+  font-size: 25px;
+}
+i:hover {
+  color: #7ec4f6;
+}
+
+@media only screen and (max-width: 650px) {
+  .Sidebar {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+  }
+}
+
+.show {
+  display: grid;
+}
